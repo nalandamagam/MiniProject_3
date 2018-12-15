@@ -66,4 +66,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Answer');
     }
+    public function numlogin()
+    {
+        return $this->hasOne('App\NumLogin');
+    }
 }

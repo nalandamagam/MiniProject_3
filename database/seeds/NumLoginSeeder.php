@@ -11,6 +11,12 @@ class NumLoginSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = App\User::all();
+
+        $users->each(function ($user) {
+            $numLogin = factory(\App\NumLogin::class)->make();
+            $numLogin->user()->associate($user);
+            $numLogin->save();
+        });
     }
 }

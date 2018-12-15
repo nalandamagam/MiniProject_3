@@ -11,6 +11,11 @@ class QuestionCountSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $questions = App\Question::all();
+        $questions->each(function ($question) {
+            $questionCount = factory(\App\NumLogin::class)->make();
+            $questionCount->user()->associate($question);
+            $questionCount->save();
+        });
     }
 }

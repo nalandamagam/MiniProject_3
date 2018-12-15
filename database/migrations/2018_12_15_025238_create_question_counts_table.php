@@ -15,6 +15,8 @@ class CreateQuestionCountsTable extends Migration
     {
         Schema::create('question_counts', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('question_id');
+            $table->integer('count');
             $table->timestamps();
         });
     }

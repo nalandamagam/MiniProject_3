@@ -16,4 +16,8 @@ class Question extends Model
     {
         return $this->hasMany('App\Answer');
     }
+    public function questionCount()
+    {
+        return $this->hasOne('App\QuestionCount');
+    }
 }

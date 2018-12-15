@@ -15,6 +15,8 @@ class CreateNumLoginsTable extends Migration
     {
         Schema::create('num_logins', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('count');
             $table->timestamps();
         });
     }
