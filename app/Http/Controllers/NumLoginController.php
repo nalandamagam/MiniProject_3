@@ -32,7 +32,12 @@ class NumLoginController extends Controller
         foreach($data as $key => $value)
         {
             $profile = $value->user->profile;
-            $name = $profile->fname . ' ' . $profile->lname;
+            if($profile!=null){
+                $name = $profile->fname . ' ' . $profile->lname;
+            } else {
+                $name = $value->user->email;
+            }
+
             $array[++$key] = [$name, (int)$value->count];
         }
         return view('numLogin')->with('loginCount', json_encode($array));
