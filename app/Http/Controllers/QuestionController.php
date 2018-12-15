@@ -52,6 +52,10 @@ class QuestionController extends Controller
         $question = new Question($input);
         $question->user()->associate(Auth::user());
         $question->save();
+        $questionCount = new QuestionCount();
+        $questionCount->count = 1;
+        $questionCount->question()->associate($question);
+        $questionCount->save();
         return redirect()->route('home')->with('message', 'IT WORKS!');
         // return redirect()->route('questions.show', ['id' => $question->id]);
     }
@@ -65,6 +69,11 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
+        $questionCount = $question->questionCount;
+        $count = $questionCount->count;
+        $count = $count +1;
+        $questionCount->count = $count;
+        $questionCount->save();
         return view('question')->with('question', $question);
     }
 
