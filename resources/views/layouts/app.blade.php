@@ -46,6 +46,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
+                    @if(Request::is('loginChart'))
+                        <a class="navbar-brand" href="/questionChart">Dashboard</a>
+                    @else
+                        <a class="navbar-brand" href="/loginChart">Dashboard</a>
+                    @endif
 
                 </ul>
 
