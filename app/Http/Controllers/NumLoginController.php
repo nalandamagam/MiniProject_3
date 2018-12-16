@@ -25,7 +25,7 @@ class NumLoginController extends Controller
      */
     public function index()
     {
-        $data = NumLogin::orderBy('count'. 'desc')->limit(5)->get();
+        $data = NumLogin::orderBy('count', 'desc')->limit(5)->get();
 
         $array[] = ['name', 'count'];
 
