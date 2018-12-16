@@ -25,13 +25,13 @@ class QuestionCountController extends Controller
      */
     public function index()
     {
-        $data = QuestionCount::orderBy('count'. 'desc')->limit(5)->get();
+        $data = QuestionCount::orderBy('count', 'desc')->limit(5)->get();
 
         $array[] = ['name', 'count'];
 
         foreach($data as $key => $value)
         {
-            $array[++$key] = [(string)$value->question_id, (int)$value->count];
+            $array[++$key] = [(int)$value->question_id, (int)$value->count];
         }
         return view('questionCount')->with('questionCount', json_encode($array));
     }

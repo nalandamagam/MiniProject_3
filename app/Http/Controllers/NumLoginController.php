@@ -27,7 +27,7 @@ class NumLoginController extends Controller
     {
         $data = NumLogin::orderBy('count', 'desc')->limit(5)->get();
 
-        $array[] = ['name', 'count'];
+        $array[] = ['count', 'name'];
 
         foreach($data as $key => $value)
         {
@@ -38,7 +38,7 @@ class NumLoginController extends Controller
                 $name = $value->user->email;
             }
 
-            $array[++$key] = [$name, (int)$value->count];
+            $array[++$key] = [(int)$value->count, $name];
         }
         return view('numLogin')->with('loginCount', json_encode($array));
     }
