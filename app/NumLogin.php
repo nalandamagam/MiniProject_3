@@ -8,6 +8,10 @@ class NumLogin extends Model
 {
     protected $fillable = ['count'];
 
+    protected $casts = [
+        'count' => 'int',
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');
