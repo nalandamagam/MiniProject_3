@@ -6,7 +6,9 @@ To run faq project:
 3. copy .env example to .env
 4. setup database with sqlite or other
    (https://laravel.com/docs/5.6/database)
-#Dashboard Feature
+   
+# Dashboard Feature
+
 EPIC: Create dashboards to view most active users and most viewed questions
 1. Both Registered and Unregistered users should be able to view the dashboards
 2. User Login Dashboard displays top 5 active users
