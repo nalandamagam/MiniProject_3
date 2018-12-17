@@ -37,6 +37,8 @@ EPIC: Create dashboards to view most active users and most viewed questions
     1. Status of the User login dashboard
     2. Status of the Question view dashboard
     
+   Final screen shot of the test results is added to the repository with the name Final_Tests.PNG 
+    
     References
      1. https://www.webslesson.info/2018/06/how-to-use-google-chart-api-in-laravel.html
      for generating charts
