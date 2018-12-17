@@ -27,7 +27,7 @@ EPIC: Create dashboards to view most active users and most viewed questions
       
     1.  Verify number of logins is associated with user test
     2.  verify questioncount associated with question  test
-    3. User login insersion test
+    3. User login insersion test (Email address in the test needs to be changed for every test run)
     4.  User login increment test
     5. Question insertion test
     6. Question increment test
